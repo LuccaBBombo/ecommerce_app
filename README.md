@@ -1,5 +1,5 @@
-# NerdStop
-This is a ecommerce website that offers a varied category of products from console to pc's and all the equipment that you need to get started playing your favourite games and having fun.
+# EletroHome
+This is a ecommerce website that offers a varied category of products from televisions, consoles, pc's and all the equipment that you need to get started setting up your office or living room entertainment system.
 
 ## UX
 We designed the website to be very intuitive and easy to use, helping people find what they are looking for in a easy and quick manner. 
