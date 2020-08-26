@@ -1,39 +1,37 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# NerdStop
+This is a ecommerce website that offers a varied category of products from console to pc's and all the equipment that you need to get started playing your favourite games and having fun.
 
-Welcome USER_NAME,
+## UX
+We designed the website to be very intuitive and easy to use, helping people find what they are looking for in a easy and quick manner. 
+Users will be able to browse through all the items in the website, sort them by various categories and have information being quickly displayed for them, such as price, ratings, reviews, everything they need in order to decide which product is the best fit for them.
+We aim to make the process of finding your new console or piece of equipment quick and easy instead of it being a long and tiresome task.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+### User Stories
+* As a user I want to be able to browse through all the items in the website.
+* As a user I want to be able to filter results of all the items in the website so that I can find what I'm looking for easily.
+* As a user I want to be able to easily create a profile so that I can keep track of my purchases and update my details such as delivery address and card information.
+* As a user I want to be able to easily log in and log out of my profile.
+* As a user I want to be able to reset my password in case I forget it.
+* As a user I want to be able to quickly see information about the product I am interested in, such as price, ratings and reviews.
+* As a user I want to be able to choose the quantity of the chosen item I want to purchase.
+* As a user I want to easily see the items that are in my cart, as well as the full price of the items I have already selected to purchase.
+* As a user I want to be able to purchase a product without having to create a profile on the website.
 
-## Gitpod Reminders
+[Mockup]()
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Features 
 
-`python3 -m http.server`
+## Existing Features
 
-A blue button should appear to click: *Make Public*,
+## Future Features
 
-Another blue button should appear to click: *Open Browser*.
+## Technologies Used
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### Testing
 
-A blue button should appear to click: *Make Public*,
+### Deployment
 
-Another blue button should appear to click: *Open Browser*.
+### Credits
+### Acknowledgement
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
 
-## Updates Since The Instructional Video
-
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
---------
-
-Happy coding!
