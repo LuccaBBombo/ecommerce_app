@@ -37,27 +37,13 @@
   <body>
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row bg-black pt-lg-2 d-none d-lg-flex">
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+            <div class="col-12 col-lg-4 my-auto text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link home-logo-link"><h2 class="logo-font-header my-0 text-white "><strong>EletroHOME</strong></h2></a>
             </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <form method="GET" action="">
-                    <div class="input-group w-100">
-                        <input class="form-control  rounded-0" type="text" name="query" placeholder="Search our items...">
-                        <div class="input-group-append">
-                            <button class="form=control btn rounded-0" type="submit">
-                                <span class="icon">
-                                    <i class="fas fa-search text-white"></i>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+            <div class="col-12 col-lg-8 my-auto ">
                 <ul class="list-inline list-unstyled text-center text-lg-right">
                     <li class="list-inline-item dropdown">
-                        <a class="nav-link" href="#" id="user_opt" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link text-right" href="#" id="user_opt" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user fa-lg3 text-white"></i></div>
                                 <p class="text-white">My Profile</p>
@@ -66,25 +52,25 @@
                         <div class="dropdown-menu border-0" aria="user_opt">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                    <a href="" class="dropdown-item text-black">Products Management</a>
+                                    <a href="" class="dropdown-item ">Products Management</a>
                                 {% endif %}
-                                <a href="" class="dropdown-item text-white">Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item text-black"> Logout</a>
+                                <a href="" class="dropdown-item">Profile</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item "> Logout</a>
                             {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item text-black">Register Account</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item text-black"> Login</a>
+                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register Account</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-item"> Login</a>
                             {% endif %}
                         </div>    
                     </li>
                     <li class="list-inline-item">
-                        <a href ="" class="{% if grand_total %} text-info font-weight-bold{% else %}{% endif %} nav-link">
+                        <a href ="" class="{% if grand_total %} text-info font-weight-bold{% else %}{% endif %} nav-link text-right">
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-bag fa-lg text-white"></i></div>
                                 <p class="my-0 text-white">
                                     {% if grand_total %}
                                         ${{ grand_total|floatformat:2 }}
                                     {% else %}
-                                        $0.00
+                                        Your cart is empty
                                     {% endif %}
                                 </p>
                             </div>
@@ -93,11 +79,13 @@
                 </ul>
             </div>
         </div>
-        <div class="row">
-            <nav class="navbar navbar-expand-lg navbar-light w-100">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="#main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+        <div class="row bg-black">
+            <nav class="navbar navbar-expand-lg navbar-dark navbar-main">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon white"></span>
                 </button>
+                {% include 'includes/mob-header.html' %}
+                {% include 'includes/main-navbar.html' %}
             </nav>
         </div>
     </header>
@@ -114,5 +102,36 @@
 
     {% block postloadjs %}
     {% endblock %}
+<!--This code makes it so that the dropdown items are displayes when the mouse is hovered on top of it-->
+<!--Code was found on tutorials found at https://webdesign.tutsplus.com-->
+    <script type="text/javascript">
+        const $dropdown = $(".dropdown");
+        const $dropdownToggle = $(".dropdown-toggle");
+        const $dropdownMenu = $(".dropdown-menu");
+        const showClass = "show";
+        
+        $(window).on("load resize", function() {
+            // Makes so that the hover function is only applied on screen with width that are bigger then 768px
+        if (this.matchMedia("(min-width: 768px)").matches) {
+            $dropdown.hover(
+            function() {
+                const $this = $(this);
+                // Makes so that everytime the menu is hovered, it receives a Bootstrap "show" Class, displaying the links inside the menu
+                $this.addClass(showClass);
+                $this.find($dropdownToggle).attr("aria-expanded", "true");
+                $this.find($dropdownMenu).addClass(showClass);
+            },
+            function() {
+                const $this = $(this);
+                $this.removeClass(showClass);
+                $this.find($dropdownToggle).attr("aria-expanded", "false");
+                $this.find($dropdownMenu).removeClass(showClass);
+            }
+            );
+        } else {
+            $dropdown.off("mouseenter mouseleave");
+        }
+        });
+    </script>
   </body>
 </html>

@@ -1,3 +1,5 @@
+/* -------------------------------- General and reusable customizations */
+
 html {
     height: 100%;
 }
@@ -9,54 +11,9 @@ body {
     color: #555;
     font-family: 'Poppins', sans-serif;
 }
-/* icon class imported from from Bulma */
-.icon {
-    align-items: center;
-    display: inline-flex;
-    justify-content: center;
-    height: 1.5rem;
-    width: 1.5rem;
-}
 
 .logo-font {
-    font-size:40px;
-}
-
-.logo-font-header {
-    border-style: solid;
-    border-color:white;
-    font-size:40px;
-    padding: 10px;
-}
-
-.logo-font-upper{
     text-transform: uppercase;
-
-}
-
-.home-logo-link {
-    width: fit-content;
-}
-
-.shop-now-button {
-    background: white;
-    color: black;
-    min-width: 260px;
-}
-
-.btn-black {
-    background: black;
-    color: white;
-}
-
-.shop-now-button:hover,
-.shop-now-button:active,
-.shop-now-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
-    background: #222;
-    color: white;
 }
 
 .text-white {
@@ -67,20 +24,78 @@ body {
     color: black !important;
 }
 
-.border-black {
-    border: 1px solid black !important;
+.logo-font-header {
+    border-style: solid;
+    border-color:white;
+    padding: 10px;
+    font-size: 40px;
 }
+
+.navbar-main{
+    width: 100%;
+    align-content:center;
+}
+
+.main-nav-cont{
+    background-color: black;
+}
+
+/*---------------------------------*/
+/* icon class imported from from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+/*---------------------------------*/
+/*--------------------------------Home page  */
+
+.home-greeting {
+    text-transform: uppercase;
+}
+
+.home-logo-link {
+    width: fit-content;
+}
+
+.shop-now-button {
+    background: white;
+    color: black;
+    width: 260px;
+}
+
+/*---------------------------------*/
+
+/* -------------------------------- Creates animation for home 'start shopping' button */
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background: #222;
+    color: white;
+}
+/* --------------------------------  */
+
+.bg-main-nav{
+    background-color:black;
+}
+/* -------------------------------- Creates animation for dropdown links arrow icon */
+.dropdown-toggle::after {
+   transition: transform 0.15s linear; 
+}
+ 
+.show.dropdown .dropdown-toggle::after {
+  transform: translateY(3px);
+}
+/* --------------------------------*/
 
 /* -------------------------------- Media Queries */
 
-/* larger container on xl screens */
-@media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
-  }
-}
-
-/* fixed top navbar only on medium and large */
+/* fixed top navbar with width higher than 992px */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;
@@ -92,5 +107,27 @@ body {
 
     .header-container {
         padding-top: 164px;
+    }
+}
+
+
+/* changes in various elements to be better shown on mobile screens */
+@media (max-width: 500px) {
+    .home-greeting {
+    text-transform: uppercase;
+    font-size:30px;
+    }   
+    .shop-now-button {
+    background: white;
+    color: black;
+    width: 150px;
+    }
+    .shop-now-button-text {
+        font-size:15px;
+        padding:3px
+    }
+    .link-nav-mob{
+        margin-left:10px;
+        background-color: black; 
     }
 }
