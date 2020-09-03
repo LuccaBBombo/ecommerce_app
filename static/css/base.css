@@ -37,8 +37,9 @@ body {
 }
 
 .main-nav-cont{
-    background-color: black;
+    background:rgba(0, 0, 0, 0.6);
 }
+
 
 /*---------------------------------*/
 /* icon class imported from from Bulma */
@@ -130,4 +131,8 @@ body {
         margin-left:10px;
         background-color: black; 
     }
+
+    .main-nav-cont{
+    background-color: black;
+}
 }
