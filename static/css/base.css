@@ -36,6 +36,10 @@ body {
     align-content:center;
 }
 
+.bg-main-nav{
+    background-color:black;
+}
+
 .main-nav-cont{
     background:rgba(0, 0, 0, 0.6);
 }
@@ -81,9 +85,6 @@ body {
 }
 /* --------------------------------  */
 
-.bg-main-nav{
-    background-color:black;
-}
 /* -------------------------------- Creates animation for dropdown links arrow icon */
 .dropdown-toggle::after {
    transition: transform 0.15s linear; 
