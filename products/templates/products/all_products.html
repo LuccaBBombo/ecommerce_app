@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
+    <div class="container header-container ">
         <div class="row">
             <div class="col"></div>
         </div>
@@ -10,10 +10,60 @@
 {% endblock %}
 
 {% block content %}
-    <div class ="container">
+    <div class="overlay"></div>
+    <div class ="container-fluid">
+        <div class="row my-4">
+            <div class="col text-center">
+                <h3 class="logo-font-upper products-header text-white">All Products</h3>
+                <hr class="w-25">
+            </div>
+        </div>
         <div class="row">
-            <div class ="col">
-                {{ products }}
+            <div class="products-container col-10 offset-1">
+                <div class="row"></div>
+                <div class="row">
+                    {% for product in products %}
+                        <div class="col-sm-6 col-md-6 col-lg-4 mt-2">
+                            <div class="card">
+                                {% if product.image %}
+                                        <img class="card-img-top img-fluid px-5 py-2" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                {% else %}
+                                        <img class="card-img-top img-fluid px-5 py-2" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                {% endif %}
+                                <div class="card-body">
+                                    <a href=""><h5 class="card-title text-underline text-black">{{ product.name }}</h5></a>
+                                    <p class="card-text text-right product-price"> €{{ product.price }}</p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="row"> 
+                                        <div class="col">
+                                            {% if product.rating %}
+                                                <p><i class="fas fa-star"></i> {{ product.rating }} / 10</p>
+                                            {% else %}
+                                                <p class="text-muted">No rating</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% if forloop.counter|divisibleby:1 %}
+                            <div class="col-12 d-sm-none my-3">
+                                <hr class="hr-products">
+                            </div>
+                        {% endif %}  
+                        {% if forloop.counter|divisibleby:2 %}
+                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none my-3">
+                                <hr class="hr-products">
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:3 %}
+                            <div class="col-12 d-none d-lg-block d-xl-none my-5">
+                                <hr class="hr-products" >
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>

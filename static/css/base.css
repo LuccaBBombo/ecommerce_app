@@ -8,17 +8,30 @@ body {
     background: url('/media/xbox.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    color: #555;
+    color: #201f25;
     font-family: 'Poppins', sans-serif;
 }
 
-.logo-font {
+.bg-color-nav{
+    background-color:#201f25;
+}
+
+hr{
+    border-color: white;
+}
+
+.logo-font-upper {
     text-transform: uppercase;
 }
 
 .text-white {
     color:aliceblue !important;
 }
+
+.text-underline {
+    text-decoration: underline;
+}
+
 
 .text-black {
     color: black !important;
@@ -36,13 +49,12 @@ body {
     align-content:center;
 }
 
-.bg-main-nav{
-    background-color:black;
-}
 
 .main-nav-cont{
-    background:rgba(0, 0, 0, 0.6);
+    background:rgba(0, 0, 0);
+    padding-top:0px !important;
 }
+
 
 
 /*---------------------------------*/
@@ -87,13 +99,31 @@ body {
 
 /* -------------------------------- Creates animation for dropdown links arrow icon */
 .dropdown-toggle::after {
-   transition: transform 0.15s linear; 
+   transition: transform 0.20s linear; 
 }
  
 .show.dropdown .dropdown-toggle::after {
   transform: translateY(3px);
 }
 /* --------------------------------*/
+
+/*--------------------------------Products page  */
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: #201f25;
+    }
+
+.product-price{
+    font-weight: bold;
+    color:black;
+    font-size:25px;
+}
+
+/*-------------------------------- */
 
 /* -------------------------------- Media Queries */
 
@@ -135,5 +165,12 @@ body {
 
     .main-nav-cont{
     background-color: black;
+    }
+
 }
+
+@media (max-width: 999px){
+    .products-header{
+        margin-top:75px;
+    }
 }
