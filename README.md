@@ -8,7 +8,7 @@ We aim to make the process of finding your new console or piece of equipment qui
 
 ### User Stories
 * As a user I want to be able to browse through all the items in the website.
-* As a user I want to be able to filter results of all the items in the website so that I can find what I'm looking for easily.
+* As a user I want to be able to filter results of all the items in the website by categories so that I can find what I'm looking for easily.
 * As a user I want to be able to easily create a profile so that I can keep track of my purchases and update my details such as delivery address and card information.
 * As a user I want to be able to easily log in and log out of my profile.
 * As a user I want to be able to reset my password in case I forget it.

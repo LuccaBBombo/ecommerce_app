@@ -18,6 +18,22 @@
                 <hr class="w-25">
             </div>
         </div>
+        <div class="row form-div">
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                    <form method="GET" action="{% url 'products' %}">
+                        <div class="input-group w-100">
+                            <input class="form-control border border-black" type="text" name="query" placeholder="Search our items..">
+                            <div class="input-group-append">
+                                <button class="form-control btn border border-black" type="submit">
+                                    <span class="icon">
+                                        <i class="fas fa-search text-white"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         <div class="row">
             <div class="products-container col-10 offset-1">
                 <div class="row"></div>
