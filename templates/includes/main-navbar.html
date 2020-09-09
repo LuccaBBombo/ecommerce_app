@@ -6,7 +6,9 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="products-link">
                 <a href="" class="dropdown-item">By Price</a>
+                <div class="dropdown-divider"></div>
                 <a href="" class="dropdown-item">By Category</a>
+                <div class="dropdown-divider "></div>
                 <a href="{% url 'products' %}" class="dropdown-item">Show All Products</a>
             </div>
         </li>
@@ -17,9 +19,10 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="tv-link">
                 <a href="" class="dropdown-item">By Brand</a>
+                <div class="dropdown-divider"></div>
                 <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item">By Screen Size</a>
-                <a href="" class="dropdown-item">Show All TV's</a>
+                <div class="dropdown-divider "></div>
+                <a href="{% url 'products' %}?category=tv" class="dropdown-item">Show All TV's</a>
             </div>
         </li>
 
@@ -28,11 +31,15 @@
                 Consoles &amp; Gamepads
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="console-link">
-                <a href="" class="dropdown-item">XBOX</a>
-                <a href="" class="dropdown-item">PS</a>
-                <a href="" class="dropdown-item">Nintendo</a>
-                <a href="" class="dropdown-item">Gamepads</a>
-                <a href="" class="dropdown-item">Show All</a>
+                <a href="{% url 'products' %}?category=consoles_xbox" class="dropdown-item">XBOX</a>
+                <div class="dropdown-divider "></div>
+                <a href="{% url 'products' %}?category=consoles_ps" class="dropdown-item">PS</a>
+                <div class="dropdown-divider "></div>
+                <a href="{% url 'products' %}?category=consoles_nintendo" class="dropdown-item">Nintendo</a>
+                <div class="dropdown-divider "></div>
+                <a href="{% url 'products' %}?category=gamepads" class="dropdown-item">Gamepads</a>
+                <div class="dropdown-divider"></div>
+                <a href="{% url 'products' %}?category=consoles_ps, consoles_xbox,consoles_nintendo, gamepads" class="dropdown-item">Show All</a>
             </div>
         </li>
 
@@ -41,10 +48,13 @@
                 PC &amp; Laptops
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="pc-link">
-                <a href="" class="dropdown-item">CPU</a>
-                <a href="" class="dropdown-item">Monitors</a>
-                <a href="" class="dropdown-item">Laptops</a>
-                <a href="" class="dropdown-item">Show All</a>
+                <a href="{% url 'products' %}?category=cpu" class="dropdown-item">CPU</a>
+                <div class="dropdown-divider"></div>
+                <a href="{% url 'products' %}?category=monitors" class="dropdown-item">Monitors</a>
+                <div class="dropdown-divider "></div>
+                <a href="{% url 'products' %}?category=laptops" class="dropdown-item">Laptops</a>
+                <div class="dropdown-divider"></div>
+                <a href="{% url 'products' %}?category=laptops, monitors, cpu" class="dropdown-item">Show All</a>
             </div>
         </li>
 
@@ -53,10 +63,13 @@
                 Accessories
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="accessories-link">
-                <a href="" class="dropdown-item">Mouses</a>
-                <a href="" class="dropdown-item">Keypads</a>
-                <a href="" class="dropdown-item">Headsets</a>
-                <a href="" class="dropdown-item">Show All</a>
+                <a href="{% url 'products' %}?category=mouses" class="dropdown-item">Mouses</a>
+                <div class="dropdown-divider "></div>
+                <a href="{% url 'products' %}?category=keypads" class="dropdown-item">Keypads</a>
+                <div class="dropdown-divider "></div>
+                <a href="{% url 'products' %}?category=headsets" class="dropdown-item">Headsets</a>
+                <div class="dropdown-divider "></div>
+                <a href="{% url 'products' %}?category=mouses, keypads, headsets" class="dropdown-item">Show All</a>
             </div>
         </li>
     </ul>
