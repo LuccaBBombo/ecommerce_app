@@ -31,7 +31,7 @@
                                         <img class="card-img-top img-fluid px-5 py-2" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                 {% endif %}
                                 <div class="card-body">
-                                    <a href=""><h5 class="card-title text-underline text-black">{{ product.name }}</h5></a>
+                                    <a href="{% url 'product_info' product.id %}"><h5 class="card-title text-underline text-black">{{ product.name }}</h5></a>
                                     <p class="card-text text-right product-price"> €{{ product.price }}</p>
                                 </div>
                                 <div class="card-footer">

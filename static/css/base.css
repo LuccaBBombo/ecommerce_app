@@ -123,6 +123,11 @@ hr{
     font-size:25px;
 }
 
+.product-info-name{
+    font-size:23px;
+    font-weight: bold;
+}
+
 /*-------------------------------- */
 
 /* -------------------------------- Media Queries */
