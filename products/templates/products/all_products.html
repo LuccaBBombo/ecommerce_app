@@ -15,6 +15,11 @@
         <div class="row my-4">
             <div class="col text-center">
                 <h3 class="logo-font-upper products-header text-white">Products</h3>
+                {% for category in current_categories %}
+                <a class="text-white text-decoration-none" href="{% url 'products' %}?category={{ category.name }}">
+                    <span class="p-2 mt-3 badge badge-white text-white border">{{ category.friendly_name }}</span>
+                </a>
+                {% endfor %}
                 <hr class="w-25">
             </div>
         </div>
@@ -22,9 +27,9 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                     <form method="GET" action="{% url 'products' %}">
                         <div class="input-group w-100">
-                            <input class="form-control border border-black" type="text" name="query" placeholder="Search our items..">
+                            <input class="form-control border" type="text" name="query" placeholder="Search our items..">
                             <div class="input-group-append">
-                                <button class="form-control btn border border-black" type="submit">
+                                <button class="form-control btn border" type="submit">
                                     <span class="icon">
                                         <i class="fas fa-search text-white"></i>
                                     </span>
@@ -49,6 +54,13 @@
                                 <div class="card-body">
                                     <a href="{% url 'product_info' product.id %}"><h5 class="card-title text-underline text-black">{{ product.name }}</h5></a>
                                     <p class="card-text text-right product-price"> €{{ product.price }}</p>
+                                    {% if product.category %}
+                                        <p class="small mt-1 mb-0">
+                                            <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                                                <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                                            </a>
+                                        </p>
+                                    {% endif %}
                                 </div>
                                 <div class="card-footer">
                                     <div class="row"> 

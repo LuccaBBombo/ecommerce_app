@@ -5,9 +5,11 @@
                 Products
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="products-link">
-                <a href="" class="dropdown-item">By Price</a>
+                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
                 <div class="dropdown-divider"></div>
-                <a href="" class="dropdown-item">By Category</a>
+                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item">By Category</a>
+                <div class="dropdown-divider "></div>
+                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item">By Rating</a>
                 <div class="dropdown-divider "></div>
                 <a href="{% url 'products' %}" class="dropdown-item">Show All Products</a>
             </div>
@@ -18,9 +20,9 @@
                 TV's
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="tv-link">
-                <a href="" class="dropdown-item">By Brand</a>
+                <a href="{% url 'products' %}?category=tv, sort=rating&direction=desc" class="dropdown-item">By Rating</a>
                 <div class="dropdown-divider"></div>
-                <a href="" class="dropdown-item">By Price</a>
+                <a href="{% url 'products' %}?category=tv, sort=price&direction=asc" class="dropdown-item">By Price</a>
                 <div class="dropdown-divider "></div>
                 <a href="{% url 'products' %}?category=tv" class="dropdown-item">Show All TV's</a>
             </div>
