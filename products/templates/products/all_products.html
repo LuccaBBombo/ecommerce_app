@@ -4,7 +4,6 @@
 {% block page_header %}
     <div class="container header-container ">
         <div class="row">
-            <div class="col"></div>
         </div>
     </div>
 {% endblock %}
@@ -14,10 +13,10 @@
     <div class ="container-fluid">
         <div class="row my-4">
             <div class="col text-center">
-                <h3 class="logo-font-upper products-header text-white">Products</h3>
+                <h3 class="logo-font-upper mb-3 products-header text-white">Products</h3>
                 {% for category in current_categories %}
-                <a class="text-white text-decoration-none" href="{% url 'products' %}?category={{ category.name }}">
-                    <span class="p-2 mt-3 badge badge-white text-white border">{{ category.friendly_name }}</span>
+                <a class="text-white text-decoration-none mb-3" href="{% url 'products' %}?category={{ category.name }}">
+                    <span class="p-1 badge-white border text-white">{{ category.friendly_name }}</span>
                 </a>
                 {% endfor %}
                 <hr class="w-25">
@@ -41,7 +40,23 @@
             </div>
         <div class="row">
             <div class="products-container col-10 offset-1">
-                <div class="row"></div>
+                <div class="row ">
+                    <div class="col-12 col-md-12 mb-3 order-md-last d-flex justify-content-center justify-content-md-end">
+                        <div class="sort-select-wrapper w-md-25 ">
+                            <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                                <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                                <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
+                                <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
+                                <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                                <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                                <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
+                                <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
                     {% for product in products %}
                         <div class="col-sm-6 col-md-6 col-lg-4 mt-2">
