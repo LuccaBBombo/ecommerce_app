@@ -20,6 +20,7 @@ hr{
     border-color: white;
 }
 
+
 .logo-font-upper {
     text-transform: uppercase;
 }
@@ -137,6 +138,19 @@ hr{
     justify-content: right;
 }
 
+.bottom-btn{
+    height: 33px;
+    width: 33px;
+    position :fixed;
+    bottom: 8px;
+    right: 5px;
+    cursor:pointer;
+}
+
+.btt-icon{
+    background-color: white;
+    color:#201f25;
+}
 /*-------------------------------- */
 
 /* -------------------------------- Media Queries */

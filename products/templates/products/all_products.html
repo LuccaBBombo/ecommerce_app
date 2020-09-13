@@ -13,17 +13,17 @@
     <div class ="container-fluid">
         <div class="row my-4">
             <div class="col text-center">
-                <h3 class="logo-font-upper mb-3 products-header text-white">Products</h3>
+                <h2 class="logo-font-upper products-header text-white">Products</h2>
                 {% for category in current_categories %}
-                <a class="text-white text-decoration-none mb-3" href="{% url 'products' %}?category={{ category.name }}">
-                    <span class="p-1 badge-white border text-white">{{ category.friendly_name }}</span>
+                <a class="text-white text-decoration-none" href="{% url 'products' %}?category={{ category.name }}">
+                    <span class="p-1 mb-4 badge-white border text-white">{{ category.friendly_name }}</span>
                 </a>
                 {% endfor %}
-                <hr class="w-25">
+                <hr class="my-4 w-50">
             </div>
         </div>
         <div class="row form-div">
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+            <div class="col-12 col-lg-4 py-1">
                     <form method="GET" action="{% url 'products' %}">
                         <div class="input-group w-100">
                             <input class="form-control border" type="text" name="query" placeholder="Search our items..">
@@ -92,29 +92,41 @@
                         </div>
                         {% if forloop.counter|divisibleby:1 %}
                             <div class="col-12 d-sm-none my-3">
-                                <hr class="hr-products">
+                                <hr>
                             </div>
                         {% endif %}  
                         {% if forloop.counter|divisibleby:2 %}
                             <div class="col-12 d-none d-sm-block d-md-block d-lg-none my-3">
-                                <hr class="hr-products">
+                                <hr>
                             </div>
                         {% endif %}
                         {% if forloop.counter|divisibleby:3 %}
                             <div class="col-12 d-none d-lg-block d-xl-none my-5">
-                                <hr class="hr-products" >
+                                <hr>
                             </div>
                         {% endif %}
                     {% endfor %}
                 </div>
             </div>
         </div>
+        <div class="bottom-btn border border-white">
+            <a class="btt-icon d-flex h-100">
+                <i class="fas fa-arrow-up mx-auto my-auto"></i>
+            </a>	
+        </div>
     </div>
+    
 {% endblock %}
 
 
 {% block postloadjs %}
     {{ block.super }}
+     <script type="text/javascript">
+		$('.btt-icon').click(function(e) {
+			window.scrollTo(0,0)
+		})
+	</script>
+
     <script type="text/javascript">
         $('#sort-select').change(function() {
             var select = $(this);
