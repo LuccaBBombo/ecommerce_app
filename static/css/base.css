@@ -153,6 +153,22 @@ hr{
 }
 /*-------------------------------- */
 
+/*--------------------------------Cart page  */
+
+.btn_add_item{
+    background: white;
+    color: #201f25 !important; /* use important to override link colors for <a> elements */
+    border: 1px solid white;
+}
+.btn_add_item:hover,
+.btn_add_item:active,
+.btn_add_item:focus {
+    background: #201f25;
+    color: white !important;
+}
+
+/*-------------------------------- */
+
 /* -------------------------------- Media Queries */
 
 /* fixed top navbar with width higher than 992px */
