@@ -122,18 +122,21 @@
 {% block postloadjs %}
     {{ block.super }}
      <script type="text/javascript">
+     // Targets the button on the products page to scroll the screen to the top when clicked
 		$('.btt-icon').click(function(e) {
 			window.scrollTo(0,0)
 		})
 	</script>
 
     <script type="text/javascript">
+    // Targets the sort select options menu on the products page to refresh the page when a new sort method is selected
         $('#sort-select').change(function() {
             var select = $(this);
             var currentUrl = new URL(window.location);
 
             var selected = select.val();
             if(selected != "reset"){
+                // Splits the term on the _ so that it can target the method of sorting and if it is set to be descending order or ascending
                 var sort = selected.split("_")[0];
                 var direction = selected.split("_")[1];
 
@@ -141,6 +144,7 @@
                 currentUrl.searchParams.set("direction", direction);
 
                 window.location.replace(currentUrl);
+                // If there is no sort method selected simply returns the products page with no sorting method
             } else {
                 currentUrl.searchParams.delete("sort");
                 currentUrl.searchParams.delete("direction");
