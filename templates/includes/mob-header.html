@@ -8,7 +8,7 @@
     <div class="dropdown-menu" aria-labelledby="user-options">
         {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
-                <a href="{% url 'account_logout' %}" class="dropdown-item">Product Management</a>
+                <a href="{% url 'account_logout' %}" class="dropdown-item">Manage Products</a>
             {% endif %}
             <a href="" class="dropdown-item">My Profile</a>
             <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
@@ -19,7 +19,7 @@
     </div>
 </li>
 <li class="list-inline-item">
-    <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-white{% endif %} nav-icons nav-link d-block d-lg-none" href="">
+    <a  href="{% url 'view_cart' %}" class="{% if grand_total %}text-primary font-weight-bold{% else %}text-white{% endif %} nav-icons nav-link d-block d-lg-none">
         <div class="text-center">
             <div><i class="my-0 fas fa-shopping-bag fa-lg text-white"></i></div>
             <p class="my-0 text-white">
