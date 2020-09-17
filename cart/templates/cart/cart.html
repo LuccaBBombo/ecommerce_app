@@ -20,11 +20,62 @@
         </div>
         <div class="row">
             <div class="col">
-                {% if cart_items %}
-                    <div class="table table-bordered table-striped"></div>
+                 {% if cart_items %}
+                    <div class="table-responsive">
+                        <table class="table text-white table-sm table-borderless">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th class="py-2" scope="col">Product Name</th>
+                                    <th class="py-2" scope="col">Price</th>
+                                    <th class="py-2" scope="col">Quantity</th>
+                                    <th class="py-2" scope="col">Subtotal</th>
+                                </tr>
+                            </thead>
+
+                            {% for item in cart_items %}
+                                <tr>
+                                    <td class="py-2">
+                                        <p><strong>{{ item.product.name }}</strong></p>
+                                    </td>
+                                    <td class="py-2">
+                                        <p>€{{ item.product.price }}</p>
+                                    </td>
+                                    <td class="py-2">
+                                        <p >{{ item.quantity }}</p>
+                                    </td>
+                                    <td class="py-2">
+                                        <p>€{{ item.product.price }}</p>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            <tr>
+                                <td colspan="5" class="pt-5 text-right">
+                                    <h5>Cart Total: €{{ total|floatformat:2 }}</h5>
+                                    <h5>Delivery: €{{ delivery|floatformat:2 }}</h5>
+                                    <h4 class="mt-4"><strong>Grand Total:</strong> €{{ grand_total|floatformat:2 }}</h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" class="text-right">
+                                    <a href="{% url 'products' %}" class="btn btn-lg">
+                                        <span class="icon">
+                                            <i class="fa fa-arrow-circle-left text-white"></i>
+                                        </span>
+                                        <span class="text-white lead">Get back to shopping</span>
+                                    </a>
+                                    <a href="" class="btn shop-now-button">
+                                        <span class="text-uppercase">Proceed to Checkout</span>
+                                        <span class="icon">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 {% else %}
                     <p class="text-white text-uppercase lead mb-3">No items in shopping cart !</p>
-                    <a href="{% url 'products' %}" class="btn  rounded-0 btn-lg">
+                    <a href="{% url 'products' %}" class="btn btn-lg">
                         <span class="icon">
                             <i class="fa fa-arrow-circle-left text-white"></i>
                         </span>

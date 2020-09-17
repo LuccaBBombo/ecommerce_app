@@ -47,7 +47,7 @@
                         {% csrf_token %}
                         <div class="form-row">
                             <div class="col-12">
-                                <p class=" lead mt-3 text-white"><strong>Quantity:</strong></p>
+                                <p class=" lead mt-3 text-white"><strong>Item Quantity:</strong></p>
                                 <div class="form-group w-25">
                                     <div class="input-group">
                                         <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="20" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
@@ -56,7 +56,7 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <a href="{% url 'products' %}" class="btn rounded-0 btn-lg mt-3">
+                                <a href="{% url 'products' %}" class="btn btn-lg mt-3">
                                     <span class="icon">
                                         <i class="fa fa-arrow-circle-left text-white"></i>
                                     </span>
