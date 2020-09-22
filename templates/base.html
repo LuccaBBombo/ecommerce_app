@@ -91,7 +91,11 @@
     </header>
     
     {% if messages %}
-        <div class="messages-container"></div>
+        <div class="messages-container">
+            {% for message in messages %}
+                {% include 'includes/toasts/toast_product_success.html' %}
+            {% endfor %}
+        </div>
     {% endif %}
     
     {% block page_header %}
@@ -101,8 +105,11 @@
     {% endblock %}
 
     {% block postloadjs %}
+    <script type="text/javascript">
+        $('.toast').toast('show');
+    </script>
     {% endblock %}
-<!--This code makes it so that the dropdown items are displayes when the mouse is hovered on top of it-->
+<!--This code makes it so that the dropdown items are displayed when the mouse is hovered on top of it-->
 <!--Code was found on tutorials found at https://webdesign.tutsplus.com-->
     <script type="text/javascript">
         const $dropdown = $(".dropdown");
