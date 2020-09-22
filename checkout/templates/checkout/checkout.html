@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout_css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container products-header">
+        <div class="row">
+            <div class="col">
+                <h3 class="text-white mt-3">Checkout Form</h3>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <p class="text-sm text-white"> Please fill out the form below to finish your order</p>
+            </div>
+                 
+        </div>
+    </div>
+{% endblock %}

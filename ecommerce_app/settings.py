@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'cart',
     'profiles',
     'checkout',
+    # Other
+    'crispy_forms'  # Package from django used to allow forms to be customized by bootstrap
 ]
 
 MIDDLEWARE = [
@@ -59,6 +61,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'ecommerce_app.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
@@ -76,6 +80,10 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'cart.contexts.cart_content',  # Added context processor for the cart items so that it can be accessed by all the templates within the app
             ],
+            'builtins':[
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
         },
     },
 ]
