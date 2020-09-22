@@ -173,7 +173,7 @@ hr{
 }
 
 .update-link:hover,
-.delete-link:hover{
+.remove-link:hover{
     cursor: pointer;
 }
 
