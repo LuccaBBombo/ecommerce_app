@@ -13,7 +13,7 @@
     <div class ="container-fluid">
         <div class="row my-4">
             <div class="col text-center">
-                <h2 class="logo-font-upper products-header text-white">Products</h2>
+                <h2 class="logo-font-upper mb-3 products-header text-white">Products</h2>
                 {% for category in current_categories %}
                 <a class="text-white text-decoration-none" href="{% url 'products' %}?category={{ category.name }}">
                     <span class="p-1 mb-4 badge-white border text-white">{{ category.friendly_name }}</span>
@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class="row form-div">
-            <div class="col-12 col-lg-4 py-1">
+            <div class="col-12 col-md-4 py-1">
                     <form method="GET" action="{% url 'products' %}">
                         <div class="input-group w-100">
                             <input class="form-control border" type="text" name="query" placeholder="Search our items..">

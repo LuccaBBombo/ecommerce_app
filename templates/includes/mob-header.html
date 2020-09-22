@@ -2,7 +2,7 @@
     <a class="text-white  nav-link-mob nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
             <div><i class="fas fa-user fa-lg text-white"></i></div>
-            <p class="my-0 text-white">My Profile</p>
+            <p class=" text-white">My Profile</p>
         </div>
     </a>
     <div class="dropdown-menu" aria-labelledby="user-options">
@@ -22,7 +22,7 @@
     <a  href="{% url 'view_cart' %}" class="{% if grand_total %}text-primary font-weight-bold{% else %}text-white{% endif %} nav-icons nav-link d-block d-lg-none">
         <div class="text-center">
             <div><i class="my-0 fas fa-shopping-bag fa-lg text-white"></i></div>
-            <p class="my-0 text-white">
+            <p class=" text-white">
                 {% if grand_total %}
                     €{{ grand_total|floatformat:2 }}
                 {% else %}

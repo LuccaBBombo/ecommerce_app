@@ -151,6 +151,11 @@ hr{
     background-color: white;
     color:#201f25;
 }
+
+.input-search{
+    width: 50%;
+    justify-content: center;
+}
 /*-------------------------------- */
 
 /*--------------------------------Cart page  */
@@ -165,6 +170,11 @@ hr{
 .btn_add_item:focus {
     background: #201f25;
     color: white !important;
+}
+
+.update-link:hover,
+.delete-link:hover{
+    cursor: pointer;
 }
 
 /*-------------------------------- */
