@@ -78,6 +78,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',  # Used by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media', # Used to be able to allow media URL template tag to work
                 'cart.contexts.cart_content',  # Added context processor for the cart items so that it can be accessed by all the templates within the app
             ],
             'builtins':[

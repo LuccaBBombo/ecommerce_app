@@ -6,8 +6,10 @@ class OrderForm(forms.ModelForm):
     """Creates form model for the checkout page"""
     class Meta:
         model = Order
-        fields = ('full_name', 'email', 'street_address1',
-                  'street_address2', 'city', 'postcode', 'county', 'country')
+        fields = ('full_name', 'email', 'phone_number',
+                  'street_address1', 'street_address2',
+                  'town_or_city', 'postcode', 'country',
+                  'county',)
 
     def __init__(self, *args, **kwargs):
         """
@@ -23,7 +25,7 @@ class OrderForm(forms.ModelForm):
             'phone_number': 'Phone Number',
             'country': 'Country',
             'postcode': 'Postal Code',
-            'city': 'City',
+            'town_or_city': 'Town or City',
             'street_address1': 'Street Address 1',
             'street_address2': 'Street Address 2',
             'county': 'County',

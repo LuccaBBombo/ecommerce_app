@@ -4,16 +4,16 @@ from django.contrib import messages
 from .forms import OrderForm
 
 
-def checkout_view(request):
+def checkout(request):
     cart = request.session.get('cart', {})
     if not cart:
         messages.error(request, "Your cart is currently empty")
         return redirect(reverse('products'))
 
-    form_order = OrderForm()
+    order_form = OrderForm()
     template = 'checkout/checkout.html'
     context = {
-        'form_order': form_order,
+        'order_form': order_form,
     }
 
     return render(request, template, context)

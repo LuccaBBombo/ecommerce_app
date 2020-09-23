@@ -64,9 +64,9 @@
                             {% endfor %}
                             <tr>
                                 <td colspan="5" class="pt-5 text-right">
-                                    <h5>Cart Total: €{{ total|floatformat:2 }}</h5>
-                                    <h5>Delivery: €{{ delivery|floatformat:2 }}</h5>
-                                    <h4 class="mt-3"><strong>Grand Total:</strong> €{{ grand_total|floatformat:2 }}</h4>
+                                    <h6>Cart Total: €{{ total|floatformat:2 }}</h6>
+                                    <h6>Delivery: €{{ delivery|floatformat:2 }}</h6>
+                                    <h5 class="mt-3"><strong>Grand Total:</strong> €{{ grand_total|floatformat:2 }}</h5>
                                 </td>
                             </tr>
                             <tr>
@@ -80,7 +80,7 @@
                                     <a href="{% url 'checkout' %}" class="btn shop-now-button">
                                         <span class="text-uppercase">Proceed to Checkout</span>
                                         <span class="icon">
-                                            <i class="fas fa-lock"></i>
+                                            <i class="fa fa-credit-card-alt"></i>
                                         </span>
                                     </a>
                                 </td>

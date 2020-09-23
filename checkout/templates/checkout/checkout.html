@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load cart_tools %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'checkout/css/checkout_css' %}">
@@ -18,15 +19,100 @@
     <div class="container products-header">
         <div class="row">
             <div class="col">
-                <h3 class="text-white mt-3">Checkout Form</h3>
+                <h4 class="text-white mt-3">Order Summary</h4>
                 <hr>
             </div>
         </div>
         <div class="row">
-            <div class="col-12">
-                <p class="text-sm text-white"> Please fill out the form below to finish your order</p>
+            <div class="col my-3">
+                <div class="row">
+                    <div class="col-7">
+                        <p class="my-2 text-white">Items</p>
+                    </div>
+                    <div class="col-5 text-right">
+                        <p class="my-2 text-white">Subtotal</p>
+                    </div>
+                </div>
+                {% for item in cart_items %}
+                    <div class="row">
+                        <div class="col-9 my-1">
+                            <p class="lead small text-white"> {{ item.product.name }} </p>
+                            <p class=" text-white">Quantity: {{ item.quantity }} </p>
+                        </div>
+                        <div class="col-3 text-right my-1">
+                            <p class=" text-white"> €{{ item.product.price | subtotal_calc:item.quantity }} </p>
+                        </div>
+                    </div>
+                {% endfor %}
+                <hr>
+                <div class="row text-right text-white">
+                    <div class="col-7 offset-2">
+                        <p class=" text-white"> Order Total: </p>
+                        <p class=" text-white"> Delivery Cost: </p>
+                        <p class=" text-white lead" > Grand Total: </p>
+                    </div>
+                    <div class="col-3 ">
+                        <p class=" text-white"> €{{ total|floatformat:2 }} </p>
+                        <p class=" text-white"> €{{ delivery|floatformat:2 }}</p>
+                        <p class=" text-white" > <strong>€{{ grand_total|floatformat:2 }}</strong> </p>
+                    </div>
+                </div>
             </div>
-                 
+            <div class="col-12">
+                <hr>
+                <h3 class="text-white mt-3">Checkout Form</h3>
+                <p class="text-sm text-muted text-white"> Please fill out the form below to finish your order</p>
+                <form action="{% url 'checkout' %}" method="POST" id="pay_form">
+                    {% csrf_token %}
+                    <fieldset class="rounded mx-2 pd-2">
+                        <legend class="fieldset-label text-white w-auto">Personal Details</legend>
+                        {{ order_form.full_name | as_crispy_field }}
+                        {{ order_form.email | as_crispy_field }}
+                        {{ order_form.phone_number | as_crispy_field }}
+                    </fieldset>
+                    <fieldset class="rounded mx-2 pd-2">
+                        <legend class="fieldset-label text-white w-auto">Delivery Details</legend>
+                        {{ order_form.street_address1 | as_crispy_field }}
+                        {{ order_form.street_address2 | as_crispy_field }}
+                        {{ order_form.town_or_city | as_crispy_field }}
+                        {{ order_form.county | as_crispy_field }}
+                        {{ order_form.postcode | as_crispy_field }}
+                        {{ order_form.country | as_crispy_field }}
+                        <div class="form-check form-check-inline">
+                            {% if user.is_authenticated %}
+                                <label class="form-check-label text-white" for="id-save-delivery-info"> Save delivery details on your profile</label>
+                                <input class="form-check-input" type="checkbox" id="id-save-delivery-info" name="save-details" checked>
+                            {% else %}
+                                <label class="form-check-label mt-3" for="id-save-delivery-info">
+                                    <a class="text-white" href="{% url 'account_signup' %}">Create an account</a> or
+                                    <a class="text-white" href="{% url 'account_signup' %}">Login</a>to save these details
+                                </label>
+                            {% endif %}
+                        </div>
+                    </fieldset>
+                    <fieldset class="rounded mx-2 my-3">
+                        <legend class="fieldset-label text-white w-auto">Card Details</legend>
+                        <div class="mb-2" id="card-element"></div>
+
+                        <!-- Div used to display errors on the form -->
+                        <div class="mb-2 text-danger" id="card-errors" role="alert" ></div>
+                    </fieldset>
+                    <div class="submit-bttn text-right my-3"> 
+                        <p class="small text-danger">
+                            <span class="icon">
+                                <i class="fa fa-exclamation-triangle"></i>
+                            </span>
+                            <span class="text-white">Your cart total is<strong> €{{ grand_total | floatformat:2 }} </strong> </span>
+                        </p>
+                        <button id="submit-form-button" class="btn shop-now-button">
+                            <span class="font-weight-bold borderless">Complete payment</span>
+                            <span class="icon">
+                                <i class="fa fa-credit-card-alt"></i>
+                            </span>
+                        </button>
+                    </div>
+                </form>
+            </div>              
         </div>
     </div>
 {% endblock %}
