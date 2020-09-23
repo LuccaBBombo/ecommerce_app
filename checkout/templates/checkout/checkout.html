@@ -3,7 +3,7 @@
 {% load cart_tools %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'checkout/css/checkout_css' %}">
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout_css.css' %}">
 {% endblock %}
 
 {% block page_header %}
@@ -19,7 +19,7 @@
     <div class="container products-header">
         <div class="row">
             <div class="col">
-                <h4 class="text-white mt-3">Order Summary</h4>
+                <h3 class="text-white mt-3">Order Summary</h3>
                 <hr>
             </div>
         </div>
@@ -27,16 +27,16 @@
             <div class="col my-3">
                 <div class="row">
                     <div class="col-7">
-                        <p class="my-2 text-white">Items</p>
+                        <p class="my-2 lead text-white text-underline">Items</p>
                     </div>
                     <div class="col-5 text-right">
-                        <p class="my-2 text-white">Subtotal</p>
+                        <p class="my-2 lead text-white text-underline">Subtotal</p>
                     </div>
                 </div>
                 {% for item in cart_items %}
                     <div class="row">
                         <div class="col-9 my-1">
-                            <p class="lead small text-white"> {{ item.product.name }} </p>
+                            <p class=" text-white"> {{ item.product.name }} </p>
                             <p class=" text-white">Quantity: {{ item.quantity }} </p>
                         </div>
                         <div class="col-3 text-right my-1">
@@ -64,14 +64,14 @@
                 <p class="text-sm text-muted text-white"> Please fill out the form below to finish your order</p>
                 <form action="{% url 'checkout' %}" method="POST" id="pay_form">
                     {% csrf_token %}
-                    <fieldset class="rounded mx-2 pd-2">
-                        <legend class="fieldset-label text-white w-auto">Personal Details</legend>
+                    <fieldset class="rounded my-1 pd-2">
+                        <legend class="fieldset-label text-white ">Personal Details</legend>
                         {{ order_form.full_name | as_crispy_field }}
                         {{ order_form.email | as_crispy_field }}
                         {{ order_form.phone_number | as_crispy_field }}
                     </fieldset>
-                    <fieldset class="rounded mx-2 pd-2">
-                        <legend class="fieldset-label text-white w-auto">Delivery Details</legend>
+                    <fieldset class="rounded my-1 pd-2">
+                        <legend class="fieldset-label text-white ">Delivery Details</legend>
                         {{ order_form.street_address1 | as_crispy_field }}
                         {{ order_form.street_address2 | as_crispy_field }}
                         {{ order_form.town_or_city | as_crispy_field }}
@@ -84,25 +84,26 @@
                                 <input class="form-check-input" type="checkbox" id="id-save-delivery-info" name="save-details" checked>
                             {% else %}
                                 <label class="form-check-label mt-3" for="id-save-delivery-info">
-                                    <a class="text-white" href="{% url 'account_signup' %}">Create an account</a> or
-                                    <a class="text-white" href="{% url 'account_signup' %}">Login</a>to save these details
+                                    <a class="text-white small" href="{% url 'account_signup' %}">Create an account</a> or
+                                    <a class="text-white small" href="{% url 'account_signup' %}">Login to save these details</a>
                                 </label>
                             {% endif %}
                         </div>
                     </fieldset>
-                    <fieldset class="rounded mx-2 my-3">
-                        <legend class="fieldset-label text-white w-auto">Card Details</legend>
+                    <fieldset class="rounded mt-4">
+                        <legend class="fieldset-label text-white">Card Details</legend>
+                        <hr>
                         <div class="mb-2" id="card-element"></div>
 
                         <!-- Div used to display errors on the form -->
                         <div class="mb-2 text-danger" id="card-errors" role="alert" ></div>
                     </fieldset>
                     <div class="submit-bttn text-right my-3"> 
-                        <p class="small text-danger">
+                        <p class=" text-danger">
                             <span class="icon">
                                 <i class="fa fa-exclamation-triangle"></i>
                             </span>
-                            <span class="text-white">Your cart total is<strong> €{{ grand_total | floatformat:2 }} </strong> </span>
+                            <span >Your cart total is<strong> €{{ grand_total | floatformat:2 }} </strong> </span>
                         </p>
                         <button id="submit-form-button" class="btn shop-now-button">
                             <span class="font-weight-bold borderless">Complete payment</span>
@@ -115,4 +116,11 @@
             </div>              
         </div>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}
