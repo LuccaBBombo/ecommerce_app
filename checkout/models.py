@@ -27,9 +27,9 @@ class Order(models.Model):
         """ Generates a unique order number using UUID """
         return uuid.uuid4().hex.upper()
 
-    def grand_total_update(self):
+    def update_grand_total(self):
         """ Updates grand total after a item is added to the cart """
-        self.order_total = self.lineitems.aggregate(Sum('lineitem_total')['lineitem_total__sum'])
+        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
         self.delivery_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
         self.grand_total = self.order_total + self.delivery_cost
         self.save()

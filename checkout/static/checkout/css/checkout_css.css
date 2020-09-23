@@ -1,3 +1,4 @@
+/* -------------------------------- Checkout page form */
 .StripeElement,
 .stripe-style-input {
   box-sizing: border-box;
@@ -27,3 +28,4 @@
     border: 1px solid #201f25;
 }
 
+/* -------------------------------- Checkout success page */
