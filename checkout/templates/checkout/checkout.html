@@ -62,7 +62,7 @@
                 <hr>
                 <h3 class="text-white mt-3">Checkout Form</h3>
                 <p class="text-sm text-muted text-white"> Please fill out the form below to finish your order</p>
-                <form action="{% url 'checkout' %}" method="POST" id="pay_form">
+                <form action="{% url 'checkout' %}" method="POST" id="pay-form">
                     {% csrf_token %}
                     <fieldset class="rounded my-1 pd-2">
                         <legend class="fieldset-label text-white ">Personal Details</legend>
