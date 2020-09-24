@@ -67,7 +67,7 @@
                     <hr>
                     <div class="row">
                         <div class="col">
-                            <h3 class="text-white lead"><strong>Delivery Address</strong></h3>
+                            <h3 class="text-white lead mt-1"><strong>Delivery Address</strong></h3>
                         </div>
                     </div>
                     <hr>
@@ -96,6 +96,8 @@
                             <p class="text-white">{{ order.street_address1 }}</p>
                         </div>
                     </div>
+
+                    {% if order.street_address2 %}
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <p class="text-white"><strong>Address 2:</strong></p>
@@ -104,6 +106,9 @@
                             <p class="text-white">{{ order.street_address2 }}</p>
                         </div>
                     </div>
+                    {% endif %}
+
+                    {% if order.county %}
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <p class="text-white"><strong>County:</strong></p>
@@ -112,6 +117,8 @@
                             <p class="text-white">{{ order.county }}</p>
                         </div>
                     </div>
+                    {% endif %}
+
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <p class="text-white"><strong>City:</strong></p>
@@ -120,6 +127,8 @@
                             <p class="text-white">{{ order.town_or_city }}</p>
                         </div>
                     </div>
+
+                    {% if order.postcode %}
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <p class="text-white"><strong>Postal Code:</strong></p>
@@ -128,6 +137,8 @@
                             <p class="text-white">{{ order.postcode }}</p>
                         </div>
                     </div>
+                    {% endif %}
+
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <p class="text-white"><strong>Country:</strong></p>
@@ -140,7 +151,7 @@
                     <hr>
                     <div class="row">
                         <div class="col my-0">
-                            <h3 class="text-white lead"><strong>Billing Information:</strong></h3>
+                            <h3 class="text-white lead mt-1"><strong>Billing Information:</strong></h3>
                         </div>
                     </div>
                     <hr>
