@@ -45,7 +45,7 @@ form.addEventListener('submit', function(ev) {
     ev.preventDefault();
     card.update({ 'disabled': true});
     $('#submit-form-button').attr('disabled', true);
-    $('#pay-form').fadeToggle(100);
+    $('#pay-form').fadeToggle(100); // Toggles the loading overlay when complete payment button is activated
     $('#loading-payment-overlay').fadeToggle(100);
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
