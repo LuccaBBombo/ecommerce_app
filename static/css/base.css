@@ -50,6 +50,9 @@ hr{
     align-content:center;
 }
 
+.account-page{
+    margin-top:150px;
+}
 
 .main-nav-cont{
     background:rgba(0, 0, 0);
@@ -104,9 +107,18 @@ hr{
     color: white;
 }
 
-/*---------------------------------*/
+.white-button {
+    background: white;
+    color: black;
+}
 
-/* -------------------------------- Creates animation for home 'start shopping' and view item button */
+.white-button:hover,
+.white-button:active,
+.white-button:focus{
+    background: #222;
+    color: white;
+}
+
 .view-item-button:hover,
 .view-item-button:active,
 .view-item-button:focus{
@@ -114,13 +126,13 @@ hr{
     color: white;
 }
 
+
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus {
     background: #222;
     color: white;
 }
-/* --------------------------------  */
 
 /* -------------------------------- Creates animation for dropdown links arrow icon */
 .dropdown-toggle::after {
@@ -129,6 +141,20 @@ hr{
  
 .show.dropdown .dropdown-toggle::after {
   transform: translateY(3px);
+}
+/* --------------------------------*/
+
+/* Allauth form formatting */
+
+.allauth-form-inner-content p {
+    margin-top: 0.75rem; /* mt-4 */
+    color: white; /* text-secondary */
+}
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
+.allauth-form-inner-content a {
+	color: #17a2b8; /* text-info */
 }
 /* --------------------------------*/
 
@@ -251,5 +277,8 @@ hr{
 @media (max-width: 999px){
     .products-header{
         margin-top:75px;
+    }
+    .account-page{
+        margin-top:130px;
     }
 }
