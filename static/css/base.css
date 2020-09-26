@@ -99,15 +99,24 @@ hr{
     width: 260px;
 }
 
+.view-item-button {
+    background: black;
+    color: white;
+}
+
 /*---------------------------------*/
 
-/* -------------------------------- Creates animation for home 'start shopping' button */
+/* -------------------------------- Creates animation for home 'start shopping' and view item button */
+.view-item-button:hover,
+.view-item-button:active,
+.view-item-button:focus{
+    background: #222;
+    color: white;
+}
+
 .shop-now-button:hover,
 .shop-now-button:active,
-.shop-now-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
+.shop-now-button:focus {
     background: #222;
     color: white;
 }
