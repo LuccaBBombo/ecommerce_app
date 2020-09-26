@@ -48,13 +48,13 @@ form.addEventListener('submit', function(ev) {
     $('#pay-form').fadeToggle(100); // Toggles the loading overlay when complete payment button is activated
     $('#loading-payment-overlay').fadeToggle(100);
 
-     var saveInfo = Boolean($('#id-save-delivery-info').attr('checked'));
+     var saveInfo = Boolean($('#id-save-info').attr('checked'));
     // From using {% csrf_token %} in the checkout form
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     var postData = {
         'csrfmiddlewaretoken': csrfToken,
         'client_secret': clientSecret,
-        'id-save-delivery-info': saveInfo,
+        'id-save-info': saveInfo,
     };
     var url = '/checkout/cache_checkout_data/';
 

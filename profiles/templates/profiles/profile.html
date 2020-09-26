@@ -33,7 +33,41 @@
             </div>
             <div class="col-sm-12 col-lg-6">
                 <h5 class=" text-white my-3">Order History</h5>
-                <p class=" text-white">{{ orders }}</p>
+                <div class="order-history table-responsive">
+                    <table class="table text-white table-sm table-borderless">
+                        <thead class="thead-light">
+                            <tr>
+                                <th class="py-2" scope="col">Order Number</th>
+                                <th class="py-2" scope="col">Date</th>
+                                <th class="py-2" scope="col">Items</th>
+                                <th class="py-2" scope="col">Order Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for order in orders %}
+                                <tr>
+                                    <td class="py-2">
+                                        <a href="{% url 'order_history' order.order_number %}"
+                                        title="{{ order.order_number }}">
+                                            {{ order.order_number|truncatechars:7 }}
+                                        </a>
+                                    </td>
+                                    <td class="py-2">{{ order.date }}</td>
+                                    <td class="py-2">
+                                        <ul class="list-unstyled text-white">
+                                            {% for item in order.lineitems.all %}
+                                                <li class="small">
+                                                    {{ item.product.name }} x{{ item.quantity }}
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </td>
+                                    <td>€{{ order.grand_total }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

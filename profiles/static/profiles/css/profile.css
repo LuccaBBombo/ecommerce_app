@@ -1,0 +1,4 @@
+.order-history{
+    max-height: 504px;
+    overflow-y: auto;
+}
