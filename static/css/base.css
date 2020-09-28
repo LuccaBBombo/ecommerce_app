@@ -208,6 +208,24 @@ hr{
 }
 /*-------------------------------- */
 
+/* Product Form */
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+
 /*--------------------------------Cart page  */
 
 .btn_add_item{
@@ -256,15 +274,11 @@ hr{
     .shop-now-button {
     background: white;
     color: black;
-    width: 150px;
+    width: 175px;
     }
     .shop-now-button-text {
         font-size:15px;
-        padding:3px
-    }
-    .link-nav-mob{
-        margin-left:10px;
-        background-color: black; 
+        padding:8px
     }
 
     .main-nav-cont{
