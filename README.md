@@ -1,5 +1,5 @@
 # EletroHome
-This is a ecommerce website that offers a varied category of products from televisions, consoles, pc's and all the equipment that you need to get started setting up your office or living room entertainment system.
+This is a ecommerce website that offers a varied category of products from televisions, consoles, pc's and all the accessories and equipment that you need to get started setting up your office or living room entertainment system.
 
 ## UX
 We designed the website to be very intuitive and easy to use, helping people find what they are looking for in a easy and quick manner. 
@@ -17,21 +17,77 @@ We aim to make the process of finding your new console or piece of equipment qui
 * As a user I want to easily see the items that are in my cart, as well as the full price of the items I have already selected to purchase.
 * As a user I want to be able to purchase a product without having to create a profile on the website.
 
-[Mockup]()
 
 ## Features 
-
-## Existing Features
+* Users can buy various items of different categories and brands, choosing which one they think will be a better fit for their purposes.
+* Users who don't want to create a profile can buy items and checkout as 'Guests'.
+* Users can create a profile to store data on all their purchases or set default delivery information for future purchases.
+* Users can update profile information such as name, phone number and delivery information for future purchases.
+* Users can sort items by various categories and change the order on which items are showed.(Ex: Price Low to High, Ratings High to Low)
+* Users can use the search bar to find items that they are interested in.
+* Users can check items description and choose item quantity they want to add to cart.
+* Users have the ability to view their cart at any time, in any page on the website.
+* Users can edit their cart, change items quantity and delete items form the cart.
+* Users have the ability to check their cart contents before realizing the purchase, checking items and quantity.
 
 ## Future Features
+* Users have the ability for storing payment details to quicken site purchases.
+* Users will be able to receive a code after making a certain amount of items to get special deals, charge free deliveries and discount percentages on items.
 
 ## Technologies Used
+* [Python](https://www.python.org/)
+    * The project uses Python.
+* [JQuery](https://jquery.com/)
+    * The project uses JQuery to simplify DOM manipulation.
+* [JavaScript](https://www.javascript.com/)
+    * Used to make the webpage dynamic and interactive by implementing custom client-side scripts.
+* [Bootstrap](https://getbootstrap.com/)
+    * The project uses Bootstrap to allow for maximum responsiveness on various screen sizes and quick customization.
+* [Font Awesome](https://fontawesome.com/)
+    * The project uses Font Awesome to be able to use Font Awesome Icons Library.
+* [Django](https://www.djangoproject.com/)
+    * The project uses Django to build a webiste with a rapid and clean design.
 
 ### Testing
+* The HTML and CSS files were tested by using the W3C Mark Validator Service by direct input of the files on the validator.
+* The Python file was tested by direct input at the (extendsclass.com) file validator.
+* The JavaScript files were tested using JSLint by direct input of the files on the validator.
+* To test the responsiveness of the website in phones, tablets, and desktops screens, I was used the Chrome Developer Tools, verifying how the site reacted in different screen sizes and that it would not interfere with UX.
+1. Profile page
+    1. Click the Profile icon.
+    1. Select the register account if you don't have one and verify that you receive an email to confirm you email address.
+    1. After that click the link and see if you are taken to the confirm username and login into your account.
+    1. If you already have an account, click 'login', enter details and see if you receive a message saying that you have been successfully signed in.
+    1. If you are signed in, click the logout link and receivea messagesaying that you have successfully been logged out.
+    1. Click the Profile icon, click My Profile and see if you are taken to profile page, where you can update your default delivery details and see orders history.
+    1. Try using the Update Delivery Information form by filling it out and pressing the 'Update' button, checking to see if the information has been updated successfully.
+2. Products page
+    1. Enter a search querie in the searchbar, verifying that there are item that match the search and if they aren't any, that the user is properly informed.
+    1. Choose a item category and see if the category name that was chosen and the items that are part of it are correctly displayed.
+    1. Select the sort button and choose a sorting method seeing that the items in display are correctly updated.
+    1. Click the 'View item' button or item name, verifying that you are taken to the correct item details page.
+3. Products Information Page
+    1. Choose a quantity of the item and click the 'Add to cart' button, checking to see if the message of confirmation appears showing the item name and quantity that have been added to the cart.
+    1. Click the 'Go back to shopping' link to go back to the 'all products' page.
+4. Cart page
+    1. Click the cart icon.
+    1. See if the items and quantity are correctly displayed on the page.
+    1. Try and edit a item quantity by clicking the 'Edit' button, verifying that the 'Success' message is displayed, informing that the cart was successfully updated.
+    1. Try and delete a item by clicking the 'Delete' button, verifying that the 'Success' message is displayed, informing that the cart was successfully updated.
+    1. Click on the 'Procced to Checkout' button, being taken to the checkout view. 
+5. Checkout page
+    1. Click the 'Procced to checkout' button on the cart page.
+    1. Check to see if you are taken to the checkout page, with cart information on the item being displayed and the card details form.
+    1. Insert incorrect details on the cart, verifying that an error message appears informing the user.
+    1. Try to submit payment without filling the delivery form correctly and get a message informing the user of what went wrong.
+    1. Insert correct details on the cart, verifying that an success message appears informing the user on the number of their order and showing the email that was used to send the order confirmaton.
 
 ### Deployment
+* To locally run the code, verify that all the items listed inside the "requirements.txt" file have been installed, there are no inputs required for the code to be able to run properly.
+* All the changes made to the code where added and committed with the correct commentaries to make sure that the changes made are reflected in the comments.
 
 ### Credits
+* All the items images and description were taken from CurrysPcWorld website [Currys PC World](https://www.currys.ie/ieen/index.html).
 ### Acknowledgement
-
+* Special thanks to all the team from Code Institute on helping me on this project, tutors, mentors and also the students on the Slack community.
 

@@ -1,11 +1,3 @@
-<li class="list-inline-item m-0">
-    <a class="text-white  nav-link-mob  nav-link d-block d-lg-none" href="{% url 'home' %}" >
-        <div class="text-center">
-            <div><i class="fa fa-home fa-lg text-white" aria-hidden="true"></i></div>
-            <p class=" text-white">Home</p>
-        </div>
-    </a>
-</li>
 <li class="list-inline-item dropdown m-0">
     <a class="text-white  nav-link-mob nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
@@ -16,7 +8,7 @@
     <div class="dropdown-menu" aria-labelledby="user-options">
         {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
-                <a href="{% url 'account_logout' %}" class="dropdown-item">Manage Products</a>
+                <a href="{% url 'products' %}" class="dropdown-item ">Products Management</a>
             {% endif %}
             <a href="" class="dropdown-item">My Profile</a>
             <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
