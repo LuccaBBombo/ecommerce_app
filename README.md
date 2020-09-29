@@ -81,10 +81,28 @@ We aim to make the process of finding your new console or piece of equipment qui
     1. Insert incorrect details on the cart, verifying that an error message appears informing the user.
     1. Try to submit payment without filling the delivery form correctly and get a message informing the user of what went wrong.
     1. Insert correct details on the cart, verifying that an success message appears informing the user on the number of their order and showing the email that was used to send the order confirmaton.
-
+### Admin access only
+6. Add item page
+    1. Press the product managment link in the profile dropdown and verify that you are taken to the add item page.
+    1. Fill the item add form, testing leaving required fields empty to verify the admin is showed a message warning that there are fields missing.
+    1. Fill the form correctly, pressing the 'add' item button and verify that you are taken to the items detail page and receive a message confirming that the item was successfully added.
+7. Edit item page
+    1. Press the 'Edit' link on the 'all products' view or on the product detail view, checking that you are taken to the edit product page and the form is populated with all the information that were already filled.
+    1. Fill the item edit form, testing leaving required fields empty to verify the admin is showed a message warning that there are fields missing.
+    1. Fill the form correctly, pressing the 'edit' item button and verify that you are taken to the items detail page and receive a message confirming that the item was successfully updated.
+8. Delete item 
+    1. Go to the 'all products' view, click the 'Delete' button and verifiy that you receivea message saying the item was successfully deleted and are taken to the 'all products' page.
+    1. Go to the any product detail view, click the 'Delete' button and verifiy that you receivea message saying the item was successfully deleted and are taken to the 'all products' page.
 ### Deployment
-* To locally run the code, verify that all the items listed inside the "requirements.txt" file have been installed, there are no inputs required for the code to be able to run properly.
-* All the changes made to the code where added and committed with the correct commentaries to make sure that the changes made are reflected in the comments.
+* To locally run the code, verify that all the items listed inside the "requirements.txt" file have been installed..
+* Before running the project, make sure you set all the environmental variables correctly so that you can use all the sites functionalities properly.
+* Use the console command 'python3 manage.py makemigrations --dry-run' to see all the migrations that need to be made.
+* Use the console command 'python3 manage.py makemigrations' to realize those migrations.
+* Use the console command 'python3 manage.py migrate --plan' to see if everything is okay with the created classes.
+* Use the console command 'python3 manage.py migrate' to migrate the classes.
+* After those steps have been taken, you do not need to install any new inputs to make the project run.
+* Finally type the command 'python3 manage.py runserver' to get the website running.
+* If you want you can set an alias for the command 'python3 manage.py runserver' to make is easier to run the project.
 
 ### Credits
 * All the items images and description were taken from CurrysPcWorld website [Currys PC World](https://www.currys.ie/ieen/index.html).
