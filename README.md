@@ -93,6 +93,8 @@ We aim to make the process of finding your new console or piece of equipment qui
 8. Delete item 
     1. Go to the 'all products' view, click the 'Delete' button and verifiy that you receivea message saying the item was successfully deleted and are taken to the 'all products' page.
     1. Go to the any product detail view, click the 'Delete' button and verifiy that you receivea message saying the item was successfully deleted and are taken to the 'all products' page.
+### Bugs
+ 1. Have a bug on the main navbar link when you select to see the tv's product page by price or category it doesn't reload the page with the correct criteria.
 ### Deployment
 * To locally run the code, verify that all the items listed inside the "requirements.txt" file have been installed..
 * Before running the project, make sure you set all the environmental variables correctly so that you can use all the sites functionalities properly.
