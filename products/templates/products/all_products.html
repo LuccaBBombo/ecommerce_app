@@ -112,6 +112,11 @@
                                 <hr>
                             </div>
                         {% endif %}
+                        {% if forloop.counter|divisibleby:4 %}
+                            <div class="col-12 d-none d-lg-block d-xl-none my-5">
+                                <hr>
+                            </div>
+                        {% endif %}
                     {% endfor %}
                 </div>
             </div>
