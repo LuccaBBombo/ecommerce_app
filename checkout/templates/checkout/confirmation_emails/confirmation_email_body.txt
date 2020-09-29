@@ -4,9 +4,9 @@ This is an email confirmation of your order at EletroHOME. Your order informatio
 
 Order Number: {{ order.order_number }}
 Order Date: {{ order.date }}
-Order Total: ${{ order.order_total }}
+Order Total: €{{ order.order_total }}
 Delivery: €{{ order.delivery_cost }}
-Grand Total: ${{ order.grand_total }}
+Grand Total: €{{ order.grand_total }}
 
 Your order will be shipped for delivery to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}.
 
